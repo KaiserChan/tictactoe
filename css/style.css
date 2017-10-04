@@ -1,3 +1,7 @@
+body {
+  font-family: monospace, serif, sans-serif;
+}
+
 h1 {
   color: darkblue;
   text-align: center;
@@ -25,4 +29,10 @@ h1 {
 
 #top-left,#top-right,#mid-mid,#bottom-left,#bottom-right {
   background-color: lightblue;
+}
+
+.player-move {
+  font-size: 150px;
+  margin: 10% 20%;
+  text-align: center;
 }
