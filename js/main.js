@@ -1,184 +1,133 @@
 document.addEventListener("DOMContentLoaded", function () {
 
+// ---------- Below are variables required ---------- //
   var playerX = 'X';
   var playerO = 'O';
   var activePlayer = playerX;
 
+  var displayMessage = document.createElement('p');
+  displayMessage.setAttribute('class', 'display-message');
 
-// OPTION 1 BELOW
-
-  // var topLeftMove = document.createElement('p');
-  // topLeftMove.setAttribute('class', 'player-move');
-  // var topMidMove = document.createElement('p');
-  // topMidMove.setAttribute('class', 'player-move');
-  // var topRightMove = document.createElement('p');
-  // topRightMove.setAttribute('class', 'player-move');
-  // var midLeftMove = document.createElement('p');
-  // midLeftMove.setAttribute('class', 'player-move');
-  // var midMidMove = document.createElement('p');
-  // midMidMove.setAttribute('class', 'player-move');
-  // var midRightMove = document.createElement('p');
-  // midRightMove.setAttribute('class', 'player-move');
-  // var bottomLeftMove = document.createElement('p');
-  // bottomLeftMove.setAttribute('class', 'player-move');
-  // var bottomMidMove = document.createElement('p');
-  // bottomMidMove.setAttribute('class', 'player-move');
-  // var bottomRightMove = document.createElement('p');
-  // bottomRightMove.setAttribute('class', 'player-move');
-  //
-  // var topLeft     = document.querySelector('#top-left');
-  // var topMid      = document.querySelector('#top-mid');
-  // var topRight    = document.querySelector('#top-right');
-  // var midLeft     = document.querySelector('#mid-left');
-  // var midMid      = document.querySelector('#mid-mid');
-  // var midRight    = document.querySelector('#mid-right');
-  // var bottomLeft  = document.querySelector('#bottom-left');
-  // var bottomMid   = document.querySelector('#bottom-mid');
-  // var bottomRight = document.querySelector('#bottom-right');
-  //
-  // topLeft.addEventListener('click', clickTopLeft);
-  // topMid.addEventListener('click', clickTopMid);
-  // topRight.addEventListener('click', clickTopRight);
-  // midLeft.addEventListener('click', clickMidLeft);
-  // midMid.addEventListener('click', clickMidMid);
-  // midRight.addEventListener('click', clickMidRight);
-  // bottomLeft.addEventListener('click', clickBottomLeft);
-  // bottomMid.addEventListener('click', clickBottomMid);
-  // bottomRight.addEventListener('click', clickBottomRight);
-  //
-  //
-  // function clickTopLeft() {
-  //   if (activePlayer === playerX) {
-  //     topLeftMove.innerHTML = playerX;
-  //     topLeft.appendChild(topLeftMove);
-  //     activePlayer = playerO;
-  //   } else if (activePlayer === playerO) {
-  //     topLeftMove.innerHTML = playerO;
-  //     topLeft.appendChild(topLeftMove);
-  //     activePlayer = playerX;
-  //   }
-  // }
-  //
-  // function clickTopMid() {
-  //   if (activePlayer === playerX) {
-  //     topMidMove.innerHTML = playerX;
-  //     topMid.appendChild(topMidMove);
-  //     activePlayer = playerO;
-  //   } else if (activePlayer === playerO) {
-  //     topMidMove.innerHTML = playerO;
-  //     topMid.appendChild(topMidMove);
-  //     activePlayer = playerX;
-  //   }
-  // }
-  //
-  // function clickTopRight() {
-  //   if (activePlayer === playerX) {
-  //     topRightMove.innerHTML = playerX;
-  //     topRight.appendChild(topRightMove);
-  //     activePlayer = playerO;
-  //   } else if (activePlayer === playerO) {
-  //     topRightMove.innerHTML = playerO;
-  //     topRight.appendChild(topRightMove);
-  //     activePlayer = playerX;
-  //   }
-  // }
-  // function clickMidLeft() {
-  //   if (activePlayer === playerX) {
-  //     midLeftMove.innerHTML = playerX;
-  //     midLeft.appendChild(midLeftMove);
-  //     activePlayer = playerO;
-  //   } else if (activePlayer === playerO) {
-  //     midLeftMove.innerHTML = playerO;
-  //     midLeft.appendChild(midLeftMove);
-  //     activePlayer = playerX;
-  //   }
-  // }
-  //
-  // function clickMidMid() {
-  //   if (activePlayer === playerX) {
-  //     midMidMove.innerHTML = playerX;
-  //     midMid.appendChild(midMidMove);
-  //     activePlayer = playerO;
-  //   } else if (activePlayer === playerO) {
-  //     midMidMove.innerHTML = playerO;
-  //     midMid.appendChild(midMidMove);
-  //     activePlayer = playerX;
-  //   }
-  // }
-  //
-  // function clickMidRight() {
-  //   if (activePlayer === playerX) {
-  //     midRightMove.innerHTML = playerX;
-  //     midRight.appendChild(midRightMove);
-  //     activePlayer = playerO;
-  //   } else if (activePlayer === playerO) {
-  //     midRightMove.innerHTML = playerO;
-  //     midRight.appendChild(midRightMove);
-  //     activePlayer = playerX;
-  //   }
-  // }
-  // function clickBottomLeft() {
-  //   if (activePlayer === playerX) {
-  //     bottomLeftMove.innerHTML = playerX;
-  //     bottomLeft.appendChild(bottomLeftMove);
-  //     activePlayer = playerO;
-  //   } else if (activePlayer === playerO) {
-  //     bottomLeftMove.innerHTML = playerO;
-  //     bottomLeft.appendChild(bottomLeftMove);
-  //     activePlayer = playerX;
-  //   }
-  // }
-  //
-  // function clickBottomMid() {
-  //   if (activePlayer === playerX) {
-  //     bottomMidMove.innerHTML = playerX;
-  //     bottomMid.appendChild(bottomMidMove);
-  //     activePlayer = playerO;
-  //   } else if (activePlayer === playerO) {
-  //     bottomMidMove.innerHTML = playerO;
-  //     bottomMid.appendChild(bottomMidMove);
-  //     activePlayer = playerX;
-  //   }
-  // }
-  //
-  // function clickBottomRight() {
-  //   if (activePlayer === playerX) {
-  //     bottomRightMove.innerHTML = playerX;
-  //     bottomRight.appendChild(bottomRightMove);
-  //     activePlayer = playerO;
-  //   } else if (activePlayer === playerO) {
-  //     bottomRightMove.innerHTML = playerO;
-  //     bottomRight.appendChild(bottomRightMove);
-  //     activePlayer = playerX;
-  //   }
-  // }
-
-  // if (topLeft === 'X' &&)
-  
-// OPTION 2 BELOW
-
-
+  var main        = document.querySelector('main');
+  var topLeft     = document.querySelector('#top-left');
+  var topMid      = document.querySelector('#top-mid');
+  var topRight    = document.querySelector('#top-right');
+  var midLeft     = document.querySelector('#mid-left');
+  var midMid      = document.querySelector('#mid-mid');
+  var midRight    = document.querySelector('#mid-right');
+  var bottomLeft  = document.querySelector('#bottom-left');
+  var bottomMid   = document.querySelector('#bottom-mid');
+  var bottomRight = document.querySelector('#bottom-right');
 
   var allGridBox  = document.querySelectorAll('.grid-box');
 
+
+// ---------- Below is the loop to iterate thru all grid boxes ---------- //
   for (i = 0; i < allGridBox.length; i++) {
     allGridBox[i].addEventListener('click', clickGridBox);
+    allGridBox[i].addEventListener('click', resultCheck);
   }
+
+
+// ---------- Below is callback function to stamp selected boxes on click ---------- //
   function clickGridBox() {
-    var move = document.createElement('p');
-    move.setAttribute('class', 'player-move');
     if (this.firstChild) {
       console.log('Box is filled already');
     } else {
       if (activePlayer === playerX) {
-        move.innerHTML = playerX;
-        this.appendChild(move);
+        this.innerHTML = playerX;
         activePlayer = playerO;
       } else if (activePlayer === playerO) {
-        move.innerHTML = playerO;
-        this.appendChild(move);
+        this.innerHTML = playerO;
         activePlayer = playerX;
       }
+    }
+  }
+
+
+// ---------- Below is callback function to check result after grid boxes are being stamped ---------- //
+  function resultCheck() {
+  // ------ Below are the result check for the rows ------ //
+    if (topLeft.innerHTML === 'X' && topMid.innerHTML === 'X' && topRight.innerHTML === 'X') {
+      var message = 'PlayerX won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (topLeft.innerHTML === 'O' && topMid.innerHTML === 'O' && topRight.innerHTML === 'O') {
+      var message = 'PlayerO won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (midLeft.innerHTML === 'X' && midMid.innerHTML === 'X' && midRight.innerHTML === 'X') {
+      var message = 'PlayerX won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (midLeft.innerHTML === 'O' && midMid.innerHTML === 'O' && midRight.innerHTML === 'O') {
+      var message = 'PlayerO won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (bottomLeft.innerHTML === 'X' && bottomMid.innerHTML === 'X' && bottomRight.innerHTML === 'X') {
+      var message = 'PlayerX won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (bottomLeft.innerHTML === 'O' && bottomMid.innerHTML === 'O' && bottomRight.innerHTML === 'O') {
+      var message = 'PlayerO won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    }
+
+  // ------ Below are the result check for the columns ------ //
+    else if (topLeft.innerHTML === 'X' && midLeft.innerHTML === 'X' && bottomLeft.innerHTML === 'X') {
+      var message = 'PlayerX won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (topLeft.innerHTML === 'O' && midLeft.innerHTML === 'O' && bottomLeft.innerHTML === 'O') {
+      var message = 'PlayerO won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (topMid.innerHTML === 'X' && midMid.innerHTML === 'X' && bottomMid.innerHTML === 'X') {
+      var message = 'PlayerX won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (topMid.innerHTML === 'O' && midMid.innerHTML === 'O' && bottomMid.innerHTML === 'O') {
+      var message = 'PlayerO won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (topRight.innerHTML === 'X' && midRight.innerHTML === 'X' && bottomRight.innerHTML === 'X') {
+      var message = 'PlayerX won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (topRight.innerHTML === 'O' && midRight.innerHTML === 'O' && bottomRight.innerHTML === 'O') {
+      var message = 'PlayerO won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    }
+
+  // ------ Below are the result check for the diagonals ------ //
+    else if (topLeft.innerHTML === 'X' && midMid.innerHTML === 'X' && bottomRight.innerHTML === 'X') {
+      var message = 'PlayerX won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (topLeft.innerHTML === 'O' && midMid.innerHTML === 'O' && bottomRight.innerHTML === 'O') {
+      var message = 'PlayerO won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (topRight.innerHTML === 'X' && midMid.innerHTML === 'X' && bottomLeft.innerHTML === 'X') {
+      var message = 'PlayerX won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    } else if (topRight.innerHTML === 'O' && midMid.innerHTML === 'O' && bottomLeft.innerHTML === 'O') {
+      var message = 'PlayerO won!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
+    }
+
+  // ------ Below are the result check for tie game ------ //
+    else {
+      for (i = 0; i < allGridBox.length; i++) {
+        allGridBox[i] != "";
+      }
+      var message = 'Its a tie! Please reload and play again!'
+      displayMessage.innerHTML = message;
+      main.appendChild(displayMessage);
     }
   }
 
