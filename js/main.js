@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // ------ Below are the result check for tie game ------ //
     else {
       for (i = 0; i < allGridBox.length; i++) {
-        allGridBox[i] != "";
+        allGridBox[i].innerText != "";
       }
       var message = 'Its a tie! Please reload and play again!'
       displayMessage.innerHTML = message;
